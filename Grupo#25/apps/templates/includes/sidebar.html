@@ -6,7 +6,7 @@
                 <div class="b-bg">
                     <i class="feather icon-trending-up"></i>
                 </div>
-                <span class="b-title">Datta Able</span>
+                <span class="b-title">Proyecto</span>
             </a>
             <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
         </div>
@@ -20,12 +20,12 @@
                     <a href="/" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span
                             class="pcoded-mtext">Dashboard</span></a>
                 </li>
-                <li data-username="Profile Page" 
+                {% comment %} <li data-username="Profile Page" 
                     class="nav-item {% if 'profile' in segment %} active {% endif %}">
                     <a href="/profile.html" class="nav-link">
                         <span class="pcoded-micon"><i class="feather icon-user"></i></span>
                             <span class="pcoded-mtext">Profile Page</span></a>
-                </li>                
+                </li>                 {% endcomment %}
                 <li class="nav-item pcoded-menu-caption">
                     <label>UI Element</label>
                 </li>
@@ -60,23 +60,26 @@
                     <a href="/tbl_bootstrap.html" class="nav-link "><span class="pcoded-micon"><i
                             class="feather icon-server"></i></span><span class="pcoded-mtext">Table</span></a>
                 </li>
+               
+               
+                {% comment %} TABLA MODIFICABLE {% endcomment %}
                 <li class="nav-item pcoded-menu-caption">
-                    <label>Chart & Maps</label>
+                    <label> Modulo PQRS</label>
                 </li>
                 <li data-username="Charts Morris" 
                     class="nav-item {% if 'chart-morris' in segment %} active {% endif %}">
                     <a href="/chart-morris.html" class="nav-link "><span
-                        class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">Chart</span></a>
+                        class="pcoded-micon"><i class="feather icon-pie-chart"></i></span><span class="pcoded-mtext">GRAFICAS</span></a>
                 </li>
                 <li data-username="Maps Google" 
                     class="nav-item {% if 'map-google' in segment %} active {% endif %}">
                     <a href="/map-google.html" class="nav-link "><span
                         class="pcoded-micon"><i class="feather icon-map"></i></span><span
-                        class="pcoded-mtext">Maps</span></a></li>
-                <li class="nav-item pcoded-menu-caption">
+                        class="pcoded-mtext">CRUD</span></a></li>
+                {% comment %} <li class="nav-item pcoded-menu-caption">
                     <label>Pages</label>
-                </li>
-                <li data-username="Authentication Sign up Sign in reset password Change password Personal information profile settings map form subscribe"
+                </li> {% endcomment %}
+                {% comment %} <li data-username="Authentication Sign up Sign in reset password Change password Personal information profile settings map form subscribe"
                     class="nav-item pcoded-hasmenu">
                     <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span
                             class="pcoded-mtext">Authentication</span></a>
@@ -84,17 +87,17 @@
                         <li class=""><a href="/register.html" class="" target="_blank">Sign UP</a></li>
                         <li class=""><a href="/login.html" class="" target="_blank">Sign IN</a></li>
                     </ul>
-                </li>
+                </li> {% endcomment %}
 
                 <li data-username="Sample Page" class="nav-item"><a href="/page-blank.html" class="nav-link"><span
-                        class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a>
+                        class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">CHATBOT</span></a>
                 </li>
 
-                <li data-username="Disabled Menu" class="nav-item">
+                {% comment %} <li data-username="Disabled Menu" class="nav-item">
                     <a href="{% url 'logout' %}" class="nav-link">
                         <span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Logout</span>
                     </a>
-                </li>
+                </li> {% endcomment %}
                 <li class="nav-item pcoded-menu-caption">
                     <label>More Resources</label>
                 </li>                    
