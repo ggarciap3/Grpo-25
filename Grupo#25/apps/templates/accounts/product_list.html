@@ -1,0 +1,57 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+    <h1 class="my-4">
+        <small>Lista</small>
+    </h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="row">
+    {% if object_list %}
+        <div class="col-12" style="overflow-x: scroll">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Tipo de producto</th>
+                    <th scope="col">Lote</th>
+                    <th scope="col">Fecha de compra</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Evidencia</th>
+                    <th scope="col">Cantidad</th>
+                    {% comment %} <th scope="col">Estado</th> {% endcomment %}
+                    <th scope="col">View</th>
+                    <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for product in object_list %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.producto }}</td>
+                    <td>{{ product.lote }}</td>
+                    <td>{{ product.datecompra }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.evidencia }}</td>
+                    <td>{{ product.price }}</td>
+                    <td><a href="{% url 'product_view' product.id %}"><button type="button" class="btn btn-outline-primary btn-sm">View</button></a></td>
+                    <td><a href="{% url 'product_delete' product.id %}"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    {% else %}
+    <div class="col-12">
+        <div class="alert alert-warning" role="alert">
+            Todavía no hay producto. Pero si lo desea, puede agregar desde <a class="badge badge-info" href="{% url 'product_new' %}"><strong>aqui.</strong></a>
+        </div>
+    </div>
+    {% endif %}
+    </div>
+{% endblock %}
